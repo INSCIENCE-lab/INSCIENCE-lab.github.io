@@ -8,6 +8,7 @@ function setLanguage(lang){
  document.querySelectorAll('[data-lang]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.lang===lang)));
  document.title=data.pageTitle;document.querySelector('meta[name="description"]').content=data.description;
  document.getElementById('gravityLink').href='https://inscience-lab.github.io/gravity-lab/?lang='+lang;
+ document.getElementById('energyLink').href='https://inscience-lab.github.io/energy/?lang='+lang;
  const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);
  try{localStorage.setItem('inscience-language',lang)}catch{}
 }
