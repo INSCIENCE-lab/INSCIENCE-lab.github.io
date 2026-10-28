@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f5f0"><meta name="description" content="INSCIENCE LAB — наука ближче. Досліджуй гравітацію та енергію в інтерактивних лабораторіях.">
+<title>INSCIENCE LAB — Наука ближче</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23212b25'/%3E%3Cpath d='M32 12v40M12 32h40M18 18l28 28M18 46l28-28' stroke='%23d6ef8b' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#labs" data-t="skip">До лабораторій</a>
+<div class="page">
+<header>
+<a class="brand" href="./" aria-label="INSCIENCE LAB"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 5v30M5 20h30M9.4 9.4l21.2 21.2M9.4 30.6L30.6 9.4"/></svg><span>INSCIENCE <b>LAB</b><small data-t="brandSub">ПРОСТІР ДЛЯ ЦІКАВОСТІ</small></span></a>
+<nav aria-label="Навігація / Navigation"><a class="nav-labs" href="#labs" data-t="nav">Лабораторії</a><div class="languages" role="group" aria-label="Мова / Language"><button type="button" data-lang="uk" aria-pressed="true">UA</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div></nav>
+</header>
+<main>
+<section class="hero" aria-labelledby="heroTitle">
+<div class="hero-copy"><p class="eyebrow"><span class="dot"></span><span data-t="welcome">ВІТАЄМО В INSCIENCE LAB</span></p><h1 id="heroTitle" data-t="title">Тут наука стає<br><em>ближчою.</em></h1><p class="intro" data-t="intro">А рівняння та формули перетворюються на мову природи — щоб описувати явища, які ми спостерігаємо.</p><a class="primary" href="#labs"><span data-t="explore">Зазирнути в лабораторії</span><span aria-hidden="true">↗</span></a><p class="hero-note" data-t="note">Для всіх, хто не перестає запитувати «чому?».</p></div>
+<div class="hero-art" role="img" aria-label="Схема: цікавість поєднує спостереження, рівняння та дослід / Curiosity connects observation, equations and experiment">
+<svg class="curiosity" viewBox="0 0 500 440" aria-hidden="true">
+<defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#b3b9ac" opacity=".45"/></pattern></defs>
+<rect x="18" y="15" width="464" height="406" fill="url(#dots)"/>
+<g fill="none" stroke="#899581" stroke-width="1"><ellipse cx="250" cy="220" rx="170" ry="114" transform="rotate(-30 250 220)"/><ellipse cx="250" cy="220" rx="170" ry="114" transform="rotate(30 250 220)"/><circle cx="250" cy="220" r="166" stroke-dasharray="3 8" opacity=".5"/></g>
+<circle class="satellite" cx="93" cy="164" r="8" fill="#db7650"/>
+<circle cx="397" cy="278" r="6" fill="#788e70"/>
+<circle cx="250" cy="220" r="73" fill="#dcedb5"/><circle cx="250" cy="220" r="62" fill="none" stroke="#9caf82" stroke-width="1"/>
+<text x="250" y="237" text-anchor="middle" font-size="74" font-family="Georgia,serif" fill="#31432c">?</text>
+<g class="art-tag"><rect x="283" y="44" width="166" height="56" rx="12"/><text x="366" y="78" text-anchor="middle" data-t="observe">Спостерігай</text></g>
+<g class="art-tag"><rect x="20" y="298" width="148" height="56" rx="12"/><text x="94" y="333" text-anchor="middle">E = mc²</text></g>
+<g class="art-tag"><rect x="301" y="346" width="164" height="56" rx="12"/><text x="383" y="380" text-anchor="middle" data-t="experiment">Експериментуй</text></g>
+<text x="45" y="75" font-size="16" fill="#7e8978" font-family="Georgia,serif">F = ma</text>
+<path d="M417 153h22m-11-11v22M77 253h14m-7-7v14" stroke="#a5ae9b" stroke-width="1.5"/>
+</svg><span class="art-caption" data-t="caption">Усе починається із запитання.</span>
+</div>
+</section>
+<section class="labs" id="labs" aria-labelledby="labsTitle">
+<div class="section-head"><div><p class="eyebrow" data-t="labEyebrow">ТВОЯ ЧЕРГА ДОСЛІДЖУВАТИ</p><h2 id="labsTitle" data-t="labsTitle">Що тобі цікаво сьогодні?</h2></div><p data-t="labIntro">Змінюй умови. Спостерігай.<br>Знаходь власні відповіді.</p></div>
+<div class="lab-grid">
+<a class="lab-card gravity" id="gravityLink" href="https://inscience-lab.github.io/gravity-lab/?lang=uk">
+<div class="lab-visual"><span class="visual-label" data-t="gravityVisual">ПРОСТІР, ЧАС І ТРОХИ ЗДИВУВАННЯ</span><svg viewBox="0 0 560 270" role="img" aria-label="Схематичні орбіти навколо масивного тіла / Schematic orbits around a massive body">
+<defs><radialGradient id="gravityGlow"><stop stop-color="#cfe19c" stop-opacity=".3"/><stop offset="1" stop-color="#cfe19c" stop-opacity="0"/></radialGradient></defs>
+<g fill="none" stroke="#526774" stroke-width=".7" opacity=".55"><path d="M30 210Q280 120 530 210M30 180Q280 70 530 180M30 150Q280 20 530 150M30 120Q280-10 530 120M80 235Q180 110 150 65M170 240Q230 110 220 40M280 240V32M390 240Q330 110 340 40M480 235Q380 110 410 65"/></g>
+<circle cx="280" cy="140" r="100" fill="url(#gravityGlow)"/><ellipse cx="280" cy="140" rx="172" ry="65" fill="none" stroke="#d5e99f" stroke-width="1.4" transform="rotate(-17 280 140)"/><ellipse cx="280" cy="140" rx="123" ry="84" fill="none" stroke="#a1b3c9" stroke-width="1" transform="rotate(25 280 140)"/>
+<circle cx="280" cy="140" r="28" fill="#dceaa7"/><path d="M264 132q10-19 29-12" fill="none" stroke="#eff6d4" stroke-width="2"/><circle class="orbit-dot" cx="434" cy="89" r="8" fill="#bdc5ed"/>
+<g fill="#83939b"><circle cx="61" cy="53" r="1.5"/><circle cx="475" cy="43" r="1"/><circle cx="496" cy="191" r="1.4"/><circle cx="151" cy="85" r="1"/></g><text x="36" y="252" fill="#9cabb1" font-family="monospace" font-size="12">x, y, z, t</text></svg><span class="visual-index">01 / GRAVITY</span></div>
+<div class="lab-body"><div class="lab-meta"><span data-t="gravityMeta">07 дослідів</span><span>UA / EN</span></div><div class="card-title"><h3>Gravity Lab</h3><span class="arrow" aria-hidden="true">↗</span></div><p class="lab-topic" data-t="gravityTopic">Від Землі до чорних дір</p><p class="lab-desc" data-t="gravityDesc">Чому тіла падають? Як народжуються орбіти? Досліджуй гравітацію, шлях світла та плин часу.</p><span class="card-action" data-t="open">Відкрити лабораторію</span></div></a>
+<a class="lab-card energy" href="https://inscience-lab.github.io/energy/">
+<div class="lab-visual"><span class="visual-label" data-t="energyVisual">КОЖЕН ДЖОУЛЬ МАЄ СВОЮ ІСТОРІЮ</span><svg viewBox="0 0 560 270" role="img" aria-label="Схема маятника і перетворення потенціальної енергії на кінетичну / Pendulum and transformation of potential into kinetic energy">
+<g stroke="#d3c8b8" stroke-width=".8" fill="none"><path d="M40 215h480M40 165h480M40 115h480M40 65h480"/><path d="M90 35v200M170 35v200M250 35v200M330 35v200M410 35v200M490 35v200"/></g>
+<path d="M92 165A146 146 0 0 0 316 165" fill="none" stroke="#c1a58e" stroke-dasharray="4 6"/><path d="M120 33h170" stroke="#524f41" stroke-width="3"/><circle cx="205" cy="33" r="5" fill="#524f41"/>
+<g class="pendulum"><path d="M205 33V187" stroke="#6e7360" stroke-width="2"/><circle cx="205" cy="187" r="25" fill="#d57751"/><path d="M193 177q7-9 16-8" stroke="#f0b998" stroke-width="2" fill="none"/></g>
+<rect class="potential-bar" x="370" y="70" width="22" height="125" rx="5" fill="#d0c3a5"/><rect class="energy-bar" x="408" y="70" width="22" height="125" rx="5" fill="#d57751"/><path d="M358 206h84" stroke="#8c8773"/><text x="371" y="232" font-family="Georgia,serif" fill="#716850" font-size="17">Eₚ</text><text x="409" y="232" font-family="Georgia,serif" fill="#716850" font-size="17">Eₖ</text>
+<text x="38" y="252" fill="#8c7e67" font-family="monospace" font-size="12">Eₚ + Eₖ + ΔU = const</text></svg><span class="visual-index">02 / ENERGY</span></div>
+<div class="lab-body"><div class="lab-meta"><span data-t="energyMeta">05 дослідів</span><span>UA</span></div><div class="card-title"><h3>Energy Lab</h3><span class="arrow" aria-hidden="true">↗</span></div><p class="lab-topic" data-t="energyTopic">Змінює форму. Не зникає.</p><p class="lab-desc" data-t="energyDesc">Маятник, пружина чи звичайна лампа — простеж, як енергія переходить з одного виду в інший.</p><span class="card-action" data-t="open">Відкрити лабораторію</span></div></a>
+</div>
+</section>
+<section class="invitation"><span class="little-star" aria-hidden="true">✳</span><div><h2 data-t="invitationTitle">Тут можна почати з «а що, якщо…»</h2><p data-t="invitation">Не обов’язково знати відповідь наперед. Зміни один параметр, подивись, що відбудеться, і спробуй пояснити побачене.</p></div><span class="invitation-mark" aria-hidden="true">↗</span></section>
+</main>
+<footer><a href="./" class="footer-brand">INSCIENCE <b>LAB</b></a><span data-t="footer">Цікавість не має віку.</span><a href="#labs" data-t="footerLink">До лабораторій ↑</a></footer>
+</div>
+</body></html>
