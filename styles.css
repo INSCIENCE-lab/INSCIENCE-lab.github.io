@@ -6,3 +6,4 @@
 .invitation{transition:background .2s,border-color .2s}.invitation:hover{background:#e5ecd9;border-color:#afbd97}.invitation:focus-visible{outline:3px solid #b05e36;outline-offset:5px}.invitation .card-action{margin-top:14px}
 footer,footer>a:last-child{font-size:14px}
 @media(max-width:650px){footer,footer>a:last-child{font-size:13px}}
+footer{flex-wrap:wrap}.creator-credit{flex:0 0 100%;width:100%;border-top:1px solid var(--line,#dce2d9);padding-top:22px;margin-top:12px;font-size:14px;line-height:1.8}.creator-credit p{margin:0 0 10px}.creator-credit strong{color:var(--ink,#213932);font-weight:600}.creator-contacts{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.creator-contacts a{text-decoration:underline;text-underline-offset:4px}@media(max-width:600px){.creator-credit{font-size:13px}.creator-contacts{gap:12px}}
