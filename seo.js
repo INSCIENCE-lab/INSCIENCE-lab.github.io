@@ -1,0 +1,31 @@
+(()=>{
+'use strict';
+const config={"kind": "hub", "base": "https://inscience-lab.github.io/", "experiments": {}, "sections": {}, "titles": ["INSCIENCE LAB — інтерактивні симуляції з фізики", "INSCIENCE LAB — Interactive Physics Simulations", "INSCIENCE LAB — Simulazioni interattive di fisica", "INSCIENCE LAB — Simulaciones interactivas de física"], "descriptions": ["Безкоштовні інтерактивні симуляції з фізики: гравітація, рух тіл, простір-час і збереження енергії. Досліди, формули, журнал вимірювань та CSV чотирма мовами.", "Free interactive physics simulations: gravity, projectile motion, spacetime and conservation of energy. Explore experiments, equations, measurements and CSV in four languages.", "Simulazioni interattive gratuite di fisica: gravità, moto dei proiettili, spaziotempo e conservazione dell’energia. Esperimenti, formule, misure e CSV in quattro lingue.", "Simulaciones interactivas gratuitas de física: gravedad, movimiento de proyectiles, espacio-tiempo y conservación de la energía. Experimentos, fórmulas, mediciones y CSV en cuatro idiomas."], "details": ["Інтерактивна симуляція з формулами, поясненнями, зміною параметрів та експортом вимірювань у CSV.", "Interactive simulation with equations, explanations, adjustable parameters and CSV measurement export.", "Simulazione interattiva con formule, spiegazioni, parametri modificabili ed esportazione delle misure in CSV.", "Simulación interactiva con fórmulas, explicaciones, parámetros ajustables y exportación de mediciones en CSV."]},languages=['uk','en','it','es'];
+const author={'@type':'Person','@id':'https://inscience-lab.github.io/#olena-kompaniiets',name:'Olena Kompaniiets',jobTitle:'Astrophysicist',sameAs:['https://www.instagram.com/kompanietslena/','https://scholar.google.com/citations?user=KqX0os4AAAAJ&hl=en']};
+const website={'@type':'WebSite','@id':'https://inscience-lab.github.io/#website',url:'https://inscience-lab.github.io/',name:'INSCIENCE LAB',inLanguage:languages,creator:author};
+let scheduled=false;
+function route(){const search=new URLSearchParams(location.search);const lang=languages.includes(search.get('lang'))?search.get('lang'):languages.includes(document.documentElement.lang)?document.documentElement.lang:'uk';let key='',value='';if(config.experiments[search.get('experiment')]){key='experiment';value=search.get('experiment')}else if(config.sections[search.get('section')]){key='section';value=search.get('section')}return{lang,key,value};}
+function address(lang,key,value){const url=new URL(config.base);if(key)url.searchParams.set(key,value);url.searchParams.set('lang',lang);return url.href;}
+function meta(key,value,property=false){const attr=property?'property':'name';let node=document.head.querySelector(`meta[${attr}="${key}"]`);if(!node){node=document.createElement('meta');node.setAttribute(attr,key);document.head.appendChild(node)}if(node.content!==value)node.content=value;}
+function link(rel,href,language){const selector=language?`link[rel="${rel}"][hreflang="${language}"]`:`link[rel="${rel}"]`;let node=document.head.querySelector(selector);if(!node){node=document.createElement('link');node.rel=rel;if(language)node.hreflang=language;document.head.appendChild(node)}if(node.href!==href)node.href=href;}
+function update(){
+ scheduled=false;const {lang,key,value}=route(),i=languages.indexOf(lang),names=key==='experiment'?config.experiments[value]:key==='section'?config.sections[value]:null;
+ const title=names?names[i]+' | INSCIENCE LAB':config.titles[i];
+ const description=names?names[i]+'. '+config.details[i]:config.descriptions[i];
+ const canonical=address(lang,key,value);
+ if(document.title!==title)document.title=title;
+ meta('description',description);meta('author','Olena Kompaniiets');
+ meta('og:type','website',true);meta('og:site_name','INSCIENCE LAB',true);meta('og:title',title,true);meta('og:description',description,true);meta('og:url',canonical,true);meta('og:locale',({uk:'uk_UA',en:'en_US',it:'it_IT',es:'es_ES'})[lang],true);
+ meta('twitter:card','summary');meta('twitter:title',title);meta('twitter:description',description);
+ link('canonical',canonical);for(const language of languages)link('alternate',address(language,key,value),language);link('alternate',address('uk',key,value),'x-default');
+ const page={'@type':key==='experiment'?'LearningResource':'CollectionPage','@id':canonical+'#page',url:canonical,name:title,description,inLanguage:lang,isPartOf:{'@id':website['@id']},author, ...(key==='experiment'?{learningResourceType:'Interactive physics simulation',isAccessibleForFree:true}:{})};
+ let node=document.getElementById('seo-structured-data');if(!node){node=document.createElement('script');node.id='seo-structured-data';node.type='application/ld+json';document.head.appendChild(node)}
+ const json=JSON.stringify({'@context':'https://schema.org','@graph':[website,page]});if(node.textContent!==json)node.textContent=json;
+}
+function schedule(){if(scheduled)return;scheduled=true;queueMicrotask(update);}
+for(const method of ['replaceState','pushState']){const original=history[method];history[method]=function(...args){const result=original.apply(this,args);schedule();return result;};}
+addEventListener('popstate',schedule);
+new MutationObserver(schedule).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+const title=document.querySelector('title');if(title)new MutationObserver(schedule).observe(title,{childList:true,subtree:true,characterData:true});
+update();document.addEventListener('DOMContentLoaded',schedule,{once:true});
+})();
