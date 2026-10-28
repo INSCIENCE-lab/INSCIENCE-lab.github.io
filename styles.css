@@ -4,3 +4,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 .invitation{transition:background .2s,border-color .2s}.invitation:hover{background:#e5ecd9;border-color:#afbd97}.invitation:focus-visible{outline:3px solid #b05e36;outline-offset:5px}.invitation .card-action{margin-top:14px}
+footer,footer>a:last-child{font-size:14px}
+@media(max-width:650px){footer,footer>a:last-child{font-size:13px}}
