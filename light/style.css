@@ -34,3 +34,7 @@ button.primary,a.primary,.groupbar button.active,.transport .primary,.modebar bu
 .lab-network{max-width:1320px;margin:auto;padding:10px 4%;display:flex;flex-wrap:wrap;gap:8px 20px;border-bottom:1px solid var(--line);font-size:11px;color:var(--muted)}.lab-network a:hover,.lab-network [aria-current=page]{color:var(--accent)}
 
 .back{display:block;width:fit-content;max-width:100%;margin:0 0 22px;padding:8px 0;line-height:1.7;white-space:normal;overflow-wrap:anywhere}.lab-network>a{min-width:0;line-height:1.7}header{height:auto;min-height:94px;flex-wrap:wrap;padding-block:16px}header nav{flex-wrap:wrap;row-gap:12px}@media(max-width:600px){header{gap:12px;min-height:79px}header nav{width:100%;margin:0;justify-content:space-between;gap:10px}.lab-network{align-items:flex-start}.lab-network .inscience-home{flex-basis:100%}}
+
+.light-languages{display:flex;gap:4px;flex-shrink:0;border:1px solid var(--line);padding:4px;border-radius:24px}.light-languages button{min-width:40px;min-height:36px;padding:6px 10px;border-radius:20px}.light-languages button[aria-pressed=true]{background:#FF4E29;color:#24120D}@media(max-width:600px){header .light-languages{margin-left:auto}header nav{order:3}header .brand{flex:1}}
+
+main a{overflow-wrap:anywhere}html[lang=en] .field label{line-height:1.6}html[lang=en] .rangeends{gap:8px}
