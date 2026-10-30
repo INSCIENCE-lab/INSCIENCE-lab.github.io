@@ -5,16 +5,16 @@
 <meta name="theme-color" content="#f6f5f0"><meta name="description" content="Безкоштовні інтерактивні симуляції з фізики: гравітація, рух тіл, простір-час, енергія та світло. Досліди, пояснення, формули й журнал вимірювань.">
 <title>INSCIENCE LAB — інтерактивні симуляції з фізики</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23212b25'/%3E%3Cpath d='M32 12v40M12 32h40M18 18l28 28M18 46l28-28' stroke='%23d6ef8b' stroke-width='6'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles.css?v=light1"><script type="module" src="app.js?v=light1" defer></script>
+<link rel="stylesheet" href="styles.css?v=brand1"><script type="module" src="app.js?v=light1" defer></script>
 
 <meta name="author" content="Olena Kompaniiets">
 <script src="seo.js?v=light1"></script>
-</head>
+<link rel="stylesheet" href="assets/brand.css?v=brand1"><script src="assets/brand.js?v=brand1" defer></script></head>
 <body>
 <a class="skip" href="#labs" data-t="skip">До лабораторій</a>
 <div class="page">
 <header>
-<a class="brand" href="./" aria-label="INSCIENCE LAB"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 5v30M5 20h30M9.4 9.4l21.2 21.2M9.4 30.6L30.6 9.4"/></svg><span>INSCIENCE <b>LAB</b><small data-t="brandSub">ПРОСТІР ДЛЯ ЦІКАВОСТІ</small></span></a>
+<a class="brand" href="./" aria-label="INSCIENCE LAB"><img class="inscience-logo" src="assets/inscience-lab.png" alt="INSCIENCE Lab" width="210" height="32"><small data-t="brandSub">ПРОСТІР ДЛЯ ЦІКАВОСТІ</small></a>
 <nav aria-label="Навігація / Navigation" data-a11y="0"><a class="nav-labs" href="#labs" data-t="nav">Лабораторії</a><div class="languages" role="group" aria-label="Мова / Language" data-a11y="1"><button type="button" data-lang="uk" aria-pressed="true">UA</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="it" aria-pressed="false" title="Italiano">IT</button><button type="button" data-lang="es" aria-pressed="false" title="Español">ES</button></div></nav>
 </header>
 <main>
@@ -22,18 +22,18 @@
 <div class="hero-copy"><p class="eyebrow"><span class="dot"></span><span data-t="welcome">ВІТАЄМО В INSCIENCE LAB</span></p><h1 id="heroTitle" data-t="title">Тут наука стає<br><em>ближчою.</em></h1><p class="intro" data-t="intro">А рівняння та формули перетворюються на мову природи — щоб описувати явища, які ми спостерігаємо.</p><a class="primary" href="#labs"><span data-t="explore">Зазирнути в лабораторії</span><span aria-hidden="true">↗</span></a><p class="hero-note" data-t="note">Для всіх, хто не перестає запитувати «чому?».</p></div>
 <div class="hero-art" role="img" aria-label="Схема: цікавість поєднує спостереження, рівняння та дослід / Curiosity connects observation, equations and experiment" data-a11y="2">
 <svg class="curiosity" viewBox="0 0 500 440" aria-hidden="true">
-<defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#b3b9ac" opacity=".45"/></pattern></defs>
+<defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#BCC9E5" opacity=".45"/></pattern></defs>
 <rect x="18" y="15" width="464" height="406" fill="url(#dots)"/>
-<g fill="none" stroke="#899581" stroke-width="1"><ellipse cx="250" cy="220" rx="170" ry="114" transform="rotate(-30 250 220)"/><ellipse cx="250" cy="220" rx="170" ry="114" transform="rotate(30 250 220)"/><circle cx="250" cy="220" r="166" stroke-dasharray="3 8" opacity=".5"/></g>
+<g fill="none" stroke="#8C9CBF" stroke-width="1"><ellipse cx="250" cy="220" rx="170" ry="114" transform="rotate(-30 250 220)"/><ellipse cx="250" cy="220" rx="170" ry="114" transform="rotate(30 250 220)"/><circle cx="250" cy="220" r="166" stroke-dasharray="3 8" opacity=".5"/></g>
 <circle class="satellite" cx="93" cy="164" r="8" fill="#db7650"/>
-<circle cx="397" cy="278" r="6" fill="#788e70"/>
-<circle cx="250" cy="220" r="73" fill="#dcedb5"/><circle cx="250" cy="220" r="62" fill="none" stroke="#9caf82" stroke-width="1"/>
-<text x="250" y="237" text-anchor="middle" font-size="74" font-family="Georgia,serif" fill="#31432c">?</text>
+<circle cx="397" cy="278" r="6" fill="#054FF0"/>
+<circle cx="250" cy="220" r="73" fill="#CAD9FF"/><circle cx="250" cy="220" r="62" fill="none" stroke="#8FAEF9" stroke-width="1"/>
+<text x="250" y="237" text-anchor="middle" font-size="74" font-family="Georgia,serif" fill="#054FF0">?</text>
 <g class="art-tag"><rect x="283" y="44" width="166" height="56" rx="12"/><text x="366" y="78" text-anchor="middle" data-t="observe">Спостерігай</text></g>
 <g class="art-tag"><rect x="20" y="298" width="148" height="56" rx="12"/><text x="94" y="333" text-anchor="middle">E = mc²</text></g>
 <g class="art-tag"><rect x="301" y="346" width="164" height="56" rx="12"/><text x="383" y="380" text-anchor="middle" data-t="experiment">Експериментуй</text></g>
-<text x="45" y="75" font-size="16" fill="#7e8978" font-family="Georgia,serif">F = ma</text>
-<path d="M417 153h22m-11-11v22M77 253h14m-7-7v14" stroke="#a5ae9b" stroke-width="1.5"/>
+<text x="45" y="75" font-size="16" fill="#7584A6" font-family="Georgia,serif">F = ma</text>
+<path d="M417 153h22m-11-11v22M77 253h14m-7-7v14" stroke="#A4B6DF" stroke-width="1.5"/>
 </svg><span class="art-caption" data-t="caption">Усе починається із запитання.</span>
 </div>
 </section>
@@ -58,7 +58,7 @@
 </section>
 <a class="invitation" href="#labs"><span class="little-star" aria-hidden="true">✳</span><div><h2 data-t="invitationTitle">Тут можна почати з «а що, якщо…»</h2><p data-t="invitation">Не обов’язково знати відповідь наперед. Зміни один параметр, подивись, що відбудеться, і спробуй пояснити побачене.</p><span class="card-action" data-t="explore">Зазирнути в лабораторії</span></div><span class="invitation-mark" aria-hidden="true">↑</span></a>
 </main>
-<footer><a href="./" class="footer-brand">INSCIENCE <b>LAB</b></a><span data-t="footer">Цікавість не має віку.</span><a href="#labs" data-t="footerLink">До лабораторій ↑</a><div class="creator-credit"><p data-t="creator">Створено астрофізикинею <strong>Оленою Компанієць</strong><br>за допомогою GPT-6 Astra.</p><nav class="creator-contacts" aria-label="Контакти / Contact" data-a11y="5"><span data-t="contacts">Контакти:</span><a href="https://www.instagram.com/kompanietslena/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://scholar.google.com/citations?user=KqX0os4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></nav></div></footer>
+<footer><a href="./" class="footer-brand"><img class="inscience-logo" src="assets/inscience-lab.png" alt="INSCIENCE Lab" width="210" height="32"></a><span data-t="footer">Цікавість не має віку.</span><a href="#labs" data-t="footerLink">До лабораторій ↑</a><div class="creator-credit"><p data-inscience-credit data-brand-managed>Створено астрофізикинею та освітньою координаторкою <a href="https://www.instagram.com/inscience.io/" target="_blank" rel="noopener">INSCIENCE</a> <strong>Оленою Компанієць</strong><br>за допомогою GPT-6 Astra та Sol.</p><nav class="creator-contacts" aria-label="Контакти / Contact" data-a11y="5"><span data-t="contacts">Контакти:</span><a href="https://www.instagram.com/kompanietslena/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://scholar.google.com/citations?user=KqX0os4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></nav></div></footer>
 </div>
 <noscript><section aria-label="INSCIENCE LAB"><h2>INSCIENCE LAB — інтерактивні симуляції з фізики</h2><p>Безкоштовні інтерактивні симуляції з фізики: гравітація, рух тіл, простір-час, енергія та світло. Досліди, пояснення, формули й журнал вимірювань.</p><p>Для запуску дослідів потрібен JavaScript. Enable JavaScript to run simulations.</p><ul><li><a href="https://inscience-lab.github.io/?lang=uk">INSCIENCE LAB — інтерактивні симуляції з фізики</a></li><li><a href="https://inscience-lab.github.io/?lang=en">INSCIENCE LAB — Interactive Physics Simulations</a></li><li><a href="https://inscience-lab.github.io/?lang=it">INSCIENCE LAB — Simulazioni interattive di fisica</a></li><li><a href="https://inscience-lab.github.io/?lang=es">INSCIENCE LAB — Simulaciones interactivas de física</a></li></ul><p><a href="https://inscience-lab.github.io/">INSCIENCE LAB</a> · <a href="https://inscience-lab.github.io/gravity-lab/">Гравітація / Gravity</a> · <a href="https://inscience-lab.github.io/energy/">Енергія / Energy</a> · <a href="https://inscience-lab.github.io/light/">Світло / Light (українською)</a></p></section></noscript>
 </body></html>
