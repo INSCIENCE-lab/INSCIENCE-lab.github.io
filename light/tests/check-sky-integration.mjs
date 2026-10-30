@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {solveSky} from '../sky-worker.js';
+import {fixedAtmosphere,dayPosition,transferKey,getTransfer,installTransfer,selectedSky} from '../atmosphere.js';
+import {chartData} from '../visuals.js';
+const p={...fixedAtmosphere('mars'),...dayPosition(3,45),planet:'mars',T:5800,view:3,azimuth:0,alt:0,skyView:'panorama',mode:'simulation',skyPlot:'radiance'};
+const q=solveSky(p);assert(q.multiple);assert(q.grid.flat(2).every(Number.isFinite));assert(q.skySamples.flat().every(Number.isFinite));assert.equal(q.cut,0);
+installTransfer(transferKey(p),q);assert.equal(selectedSky(p),q);assert.equal(getTransfer({...p,exposure:4,skyPlot:'tau'}),q);assert(!getTransfer({...p,co2:0}));
+const data=chartData({id:'sky',axis:['Довжина хвилі, нм','Світло']},p,0);assert(Math.abs(data.pts.reduce((sum,[,v],i)=>sum+v*q.binWidths[i],0)-q.relative)<1e-12);
+assert(Math.abs(q.source.reduce((sum,[,v])=>sum+v,0)-1)<1e-12);
+const moved=solveSky({...p,view:30,azimuth:90},()=>{},q);assert.equal(moved.grid,q.grid);assert(moved.relative!==q.relative);
+console.log('Complete scene finite, source normalized, current solver drives selected spectra, per-nm chart conserves integrated signal, display does not change physics, and marker movement reuses scene grid.');

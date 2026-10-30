@@ -9,3 +9,8 @@ footer,footer>a:last-child{font-size:14px}
 footer{flex-wrap:wrap}.creator-credit{flex:0 0 100%;width:100%;border-top:1px solid var(--line,#dce2d9);padding-top:22px;margin-top:12px;font-size:14px;line-height:1.8}.creator-credit p{margin:0 0 10px}.creator-credit strong{color:var(--ink,#213932);font-weight:600}.creator-contacts{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.creator-contacts a{text-decoration:underline;text-underline-offset:4px}@media(max-width:600px){.creator-credit{font-size:13px}.creator-contacts{gap:12px}}
 
 .creator-credit{order:4}.language-switch,.languages{flex-shrink:0}
+
+/* Three laboratories, with the approved Light accent. */
+.lab-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.light .lab-visual{background:#181513}.light .visual-label,.light .visual-index{color:#FFB19D}.light .card-action{border-color:#FF4E29}.light:hover .arrow{background:#FFE0D6;border-color:#FFB19D}.light .lab-topic{color:#A63E26}
+@media(max-width:1050px) and (min-width:651px){.lab-grid{grid-template-columns:1fr 1fr}.light{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.light .lab-visual{height:100%;min-height:260px}.light .lab-desc{min-height:0}}
+@media(max-width:650px){.lab-grid{grid-template-columns:1fr}.light{display:block;grid-column:auto}.light .lab-visual{height:238px}}

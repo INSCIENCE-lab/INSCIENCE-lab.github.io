@@ -1,0 +1,32 @@
+{
+  "reference": "https://doi.org/10.1111/cgf.15010",
+  "repository": "https://github.com/cosmoscout/cosmoscout-vr",
+  "files": [
+    {
+      "name": "earth_cosmoscout_ozone_density.csv",
+      "sha256": "c7cfd32cb1047a0bdb318b3f24e4640532e82ed23cf5d40222c905fe7b624237"
+    },
+    {
+      "name": "earth_cosmoscout_ozone_absorption.csv",
+      "sha256": "5f28a033d883baf77133352244b07492a9f541f40341ea394eec621445c80f68"
+    },
+    {
+      "name": "mars_cosmoscout_aerosols_realistic_phase.csv",
+      "sha256": "b9d92e6205e23f4697bdc132854c6aa9a01fe823881d5b2a6587a6ea351d3308"
+    },
+    {
+      "name": "mars_cosmoscout_aerosols_realistic_density.csv",
+      "sha256": "7440c988621d78003fceefa083cd5ceb468392f8704b3e59e11ffb13a3633057"
+    },
+    {
+      "name": "mars_cosmoscout_aerosols_realistic_scattering.csv",
+      "sha256": "a4689a8631bfd215708daaa0c76f92ad115748d6f7e189d30e9e560b5486482e"
+    },
+    {
+      "name": "mars_cosmoscout_aerosols_realistic_absorption.csv",
+      "sha256": "0ef1806a2cce54cf1c457b4296bbed5cffc588dd46bc80f63b3e851ef56e0e28"
+    }
+  ],
+  "upstream_commit": "369aad3c5361f52d353dfb1fa8b05b254d89e86b",
+  "data_license": "CC0-1.0 (plugins/csp-atmospheres/REUSE.toml)"
+}

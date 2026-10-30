@@ -1,0 +1,16 @@
+CosmoScout VR reference optical tables
+German Aerospace Center (DLR), cosmoscout@dlr.de
+Repository: https://github.com/cosmoscout/cosmoscout-vr
+Upstream commit: 369aad3c5361f52d353dfb1fa8b05b254d89e86b
+Path: plugins/csp-atmospheres/scattering-table-generator/output/
+Files: mars_cosmoscout_aerosols_realistic_{absorption,scattering,phase,density}.csv;
+earth_cosmoscout_ozone_{absorption,density}.csv.
+License: CC0-1.0, per plugins/csp-atmospheres/REUSE.toml output/** annotation.
+Reference: Schneegans, Meyran, Ginkel, Zachmann & Gerndt (2024),
+Physically Based Real-Time Rendering of Atmospheres using Mie Theory.
+https://doi.org/10.1111/cgf.15010
+The source data were converted from m^-1 to km^-1 and packaged as JavaScript.
+Wavelengths and phase functions are linearly interpolated by this application.
+The radiative-transfer solver is an independent implementation, not the
+Bruneton/CosmoScout runtime. Tabulated Mars density was retained and scaled
+in height and integrated dust optical depth as described on the Site.
