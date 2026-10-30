@@ -22,3 +22,5 @@ h1,h2,.nav-labs{color:#054FF0}.brand{gap:16px}.brand small{max-width:110px;line-
 .gravity .lab-visual{background:#111829}.energy .lab-visual{background:#190D26}.light .lab-visual{background:#181513}
 .lab-card .visual-label{color:#E6E7ED}.lab-card .visual-index{color:#C0C3CF}.gravity .visual-label,.gravity .visual-index{color:#D3DB89}.energy .visual-label,.energy .visual-index{color:#D6AEFF}.light .visual-label,.light .visual-index{color:#FFB19D}
 .gravity .card-action{border-color:#BDC71E}.energy .card-action{border-color:#8303DC}.light .arrow,.light:hover .arrow{background:#FF4E29;border-color:#FF4E29;color:#181513}.gravity:hover{border-color:#BDC71E}.energy:hover{border-color:#8303DC}.light:hover{border-color:#FF4E29}.lab-meta{color:#767C89}.invitation:hover{background:#E3EBFF;border-color:#A9BFFB}
+
+.hub-sources{margin:32px 0;padding:20px 24px;border:1px solid var(--line,#d5ddef);border-radius:16px;line-height:1.7}.hub-sources summary{cursor:pointer;font-weight:700}.hub-sources p{max-width:90ch}.hub-sources a{color:#054FF0;overflow-wrap:anywhere}
