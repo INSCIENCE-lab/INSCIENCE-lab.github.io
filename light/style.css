@@ -38,3 +38,7 @@ button.primary,a.primary,.groupbar button.active,.transport .primary,.modebar bu
 .light-languages{display:flex;gap:4px;flex-shrink:0;border:1px solid var(--line);padding:4px;border-radius:24px}.light-languages button{min-width:40px;min-height:36px;padding:6px 10px;border-radius:20px}.light-languages button[aria-pressed=true]{background:#FF4E29;color:#24120D}@media(max-width:600px){header .light-languages{margin-left:auto}header nav{order:3}header .brand{flex:1}}
 
 main a{overflow-wrap:anywhere}html[lang=en] .field label{line-height:1.6}html[lang=en] .rangeends{gap:8px}
+
+@media(max-width:600px){header .brand{flex:1 1 130px}header .light-languages{max-width:100%;margin-left:0}.light-languages button{min-width:32px;padding:5px 7px}}
+
+.light-loading{max-width:1240px;margin:24px auto;padding:16px 4%;line-height:1.7}.light-loading button{margin-top:12px;padding:10px 18px;border:1px solid var(--accent);border-radius:10px}
