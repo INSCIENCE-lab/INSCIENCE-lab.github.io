@@ -1,5 +1,5 @@
-import {english} from './english-labels.js';
-import {exps,defaults} from './content.js';import {enhance} from './enhancements.js';import {theories,notes,tasks,limits,observe} from './english-theory.js';enhance(exps);
+import {english} from './english-labels.js?v=audit2';
+import {exps,defaults} from './content.js?v=audit2';import {enhance} from './enhancements.js?v=audit2';import {theories,notes,tasks,limits,observe} from './english-theory.js?v=audit2';enhance(exps);
 export const groups=['Wave optics','Photons and matter','Light in the Universe'];
 const canonicalTitles=Object.fromEntries(exps.map(e=>[e.id,e.title]));
 const fieldKeys=new Map();

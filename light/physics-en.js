@@ -1,5 +1,5 @@
 import * as base from './physics.js';
-import {english} from './english-labels.js';
+import {english} from './english-labels.js?v=audit2';
 export * from './physics.js';
 export const atomicSpecies=Object.fromEntries(Object.entries(base.atomicSpecies).map(([k,v])=>[k,{...v,name:english(v.name)}]));
 export const stellarClassNames=Object.fromEntries(Object.entries(base.stellarClassNames).map(([k,v])=>[k,english(v)]));
