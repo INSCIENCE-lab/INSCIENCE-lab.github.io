@@ -70,3 +70,12 @@ input[type=range]{min-height:36px;touch-action:pan-y}
  .skyViewportGrid #scene{height:290px}.skyViewportGrid #sunScene{height:310px}
 }
 .skyTools>.field{grid-column:1/-1}
+/* Keep experiment settings before charts and theory on phones. */
+@media(max-width:720px){
+ .labgrid>div{display:contents}
+ .labgrid>.settings{order:1}
+ .labgrid .stage{order:0;width:100%}
+ .labgrid .chartbox{order:2;width:100%}
+ .labgrid .calculated{order:3;width:100%}
+ .labgrid .under{order:4;width:100%}
+}
