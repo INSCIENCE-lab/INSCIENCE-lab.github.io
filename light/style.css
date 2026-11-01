@@ -42,3 +42,31 @@ main a{overflow-wrap:anywhere}html[lang=en] .field label{line-height:1.6}html[la
 @media(max-width:600px){header .brand{flex:1 1 130px}header .light-languages{max-width:100%;margin-left:0}.light-languages button{min-width:32px;padding:5px 7px}}
 
 .light-loading{max-width:1240px;margin:24px auto;padding:16px 4%;line-height:1.7}.light-loading button{margin-top:12px;padding:10px 18px;border:1px solid var(--accent);border-radius:10px}
+
+/* Mobile scene controls are beside the image, independent of canvas pixels. */
+.labgrid>*,.under>*,.stagebar>*,.live>*,.field label>span{min-width:0}
+.field label{flex-wrap:wrap}.field label>span{flex:1 1 140px;overflow-wrap:anywhere}
+.field output{flex:0 0 auto}.field select{max-width:100%;min-height:44px}
+input[type=range]{min-height:36px;touch-action:pan-y}
+.stagebar span,.live span,.chartRead{overflow-wrap:anywhere}
+.sceneWorkbench{min-width:0;background:var(--dark);color:#fff}
+.sceneToolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 14px;border-block:1px solid #6E4A3E}
+.sceneToolbar button{min-height:44px;background:#30201A;color:white;border-color:#6E4A3E;font-size:12px;white-space:normal}
+.sceneScale{display:flex;flex:1 1 240px;gap:10px;align-items:center;flex-wrap:wrap;font-size:12px}
+.sceneScale input{flex:1 1 110px;min-width:80px;width:auto;margin:0}.sceneScale output{min-width:32px}
+.sceneViewport{overflow:auto;max-height:80svh;overscroll-behavior:contain;touch-action:pan-x pan-y}
+.stage .sceneViewport canvas{max-width:none;touch-action:pan-x pan-y}
+.stage canvas.pannable{touch-action:none}
+.sceneWorkbench.is-expanded{position:fixed;inset:8px;z-index:1000;border:1px solid #6E4A3E;border-radius:12px;overflow:auto;box-shadow:0 0 0 20px #181513}
+.sceneWorkbench.is-expanded .sceneToolbar{position:sticky;top:0;z-index:2;background:#251D19}
+.scene-is-expanded{overflow:hidden}
+.skyComputeNotice{padding:14px 18px;margin:0;background:#30201A;color:#fff;font-size:clamp(14px,3.6vw,17px);line-height:1.6;overflow-wrap:anywhere;border-bottom:1px solid #6E4A3E}
+.skyPreviousResult{opacity:.8}
+@media(max-width:720px){
+ .labgrid{display:flex;flex-direction:column}.labgrid>div,.labgrid>.settings{width:100%}
+ .sceneToolbar{gap:8px;padding:10px}.sceneToolbar button{flex:1 1 110px}
+ .modebar button{min-height:44px}.transport button,.photonTools button{min-height:44px}
+ .skyViewportGrid{grid-template-columns:1fr}
+ .skyViewportGrid #scene{height:290px}.skyViewportGrid #sunScene{height:310px}
+}
+.skyTools>.field{grid-column:1/-1}

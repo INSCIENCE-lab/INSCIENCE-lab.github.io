@@ -1,5 +1,5 @@
-import {dictionaries,theories,models} from './romance-data.js?v=audit2';
-import {exps} from './english-content.js?v=audit2';
+import {dictionaries,theories,models} from './romance-data.js?v=mobile3';
+import {exps} from './english-content.js?v=mobile3';
 export function installLanguage(language){
  const dictionary={...dictionaries[language]};
  for(const e of exps){const m=models[language][e.id];dictionary[e.note]=m.note;dictionary[e.observe]=m.task;dictionary[e.task]=m.task;dictionary[e.limit]=m.note;

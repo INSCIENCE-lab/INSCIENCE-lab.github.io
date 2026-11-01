@@ -6,7 +6,7 @@ document.querySelector('[data-light-language]')?.parentElement.setAttribute('ari
 const loading=document.getElementById('lightLoading');if(loading)loading.textContent={uk:'Завантажуємо досліди…',en:'Loading experiments…',it:'Caricamento degli esperimenti…',es:'Cargando los experimentos…'}[language];
 for(const button of document.querySelectorAll('[data-light-language]')){button.setAttribute('aria-pressed',String(button.dataset.lightLanguage===language));button.addEventListener('click',()=>{const url=new URL(location.href);url.searchParams.set('lang',button.dataset.lightLanguage);location.assign(url);});}
 if(language!=='uk'){
- const {english}=await import('./english-labels.js?v=audit2');
+ const {english}=await import('./english-labels.js?v=mobile3');
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;
  while(node=walker.nextNode()){if(!['SCRIPT','STYLE'].includes(node.parentElement?.tagName))node.nodeValue=english(node.nodeValue);}
  for(const el of document.querySelectorAll('[aria-label]'))el.setAttribute('aria-label',english(el.getAttribute('aria-label')));
@@ -17,8 +17,8 @@ if(language!=='uk'){
  for(const a of document.querySelectorAll('.inscience-network a[href]')){const url=new URL(a.href);url.searchParams.set('lang',language);a.href=url;}
 }
 document.querySelector('link[rel=canonical]').href='https://inscience-lab.github.io/light/?lang='+language;
-if(language==='it'||language==='es'){const {installLanguage}=await import('./romance.js?v=audit2');installLanguage(language);}
-await import(language!=='uk'?'./app-en.js?v=audit2':'./app.js?v=audit2');
+if(language==='it'||language==='es'){const {installLanguage}=await import('./romance.js?v=mobile3');installLanguage(language);}
+await import(language!=='uk'?'./app-en.js?v=mobile3':'./app.js?v=mobile3');
 
 document.getElementById('lightLoading')?.remove();
 }

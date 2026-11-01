@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {requestSky,cancelSky} from '../sky-solver.js';
+import {fixedAtmosphere,dayPosition,getTransfer,installTransfer,transferKey} from '../atmosphere.js';
+const workers=[];
+globalThis.Worker=class {constructor(){this.dead=false;workers.push(this)}postMessage(data){this.data=data}terminate(){this.dead=true}};
+const p={...fixedAtmosphere('earth'),...dayPosition(60,45),mode:'simulation',planet:'earth',T:5800,view:20,azimuth:0,alt:0};
+const wait=()=>new Promise(r=>setTimeout(r,210));let done=0;
+assert.equal(requestSky(p,()=>done++,()=>{}),false);await wait();const first=workers.at(-1);
+assert.equal(requestSky({...p,sun:5},()=>done++,()=>{}),false);assert(first.dead);await wait();const second=workers.at(-1);
+first.onmessage({data:{id:first.data.id,result:{old:true}}});assert.equal(getTransfer(p),undefined);assert.equal(done,0);
+cancelSky();assert(second.dead);second.onmessage({data:{id:second.data.id,result:{old:true}}});assert.equal(done,0);
+requestSky(p,()=>done++,()=>{});await wait();const third=workers.at(-1);third.onmessage({data:{id:third.data.id,result:{current:true}}});assert.equal(done,1);assert.equal(getTransfer(p).current,true);
+requestSky({...p,sun:10},()=>done++,()=>{});await wait();const fourth=workers.at(-1);assert.equal(requestSky(p,()=>done++,()=>{}),true);assert(fourth.dead);fourth.onmessage({data:{id:fourth.data.id,result:{old:true}}});assert.equal(done,1);
+cancelSky();console.log('Sky lifecycle: superseded workers cannot install stale results; navigation cancels work; returning to a cached result cancels obsolete work.');
