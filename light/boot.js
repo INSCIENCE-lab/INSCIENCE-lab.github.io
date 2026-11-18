@@ -18,7 +18,7 @@ if(language!=='uk'){
 }
 document.querySelector('link[rel=canonical]').href='https://inscience-lab.github.io/light/?lang='+language;
 if(language==='it'||language==='es'){const {installLanguage}=await import('./romance.js?v=editorial1');installLanguage(language);}
-await import(language!=='uk'?'./app-en.js?v=editorial1':'./app.js?v=editorial1');
+await import(language!=='uk'?'./app-en.js?v=editorial2':'./app.js?v=editorial2');
 
 document.getElementById('lightLoading')?.remove();
 }
