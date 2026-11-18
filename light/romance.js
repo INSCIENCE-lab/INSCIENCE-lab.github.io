@@ -1,7 +1,13 @@
 import {dictionaries,theories,models} from './romance-data.js?v=mobile3';
-import {exps} from './english-content.js?v=uk-copy1';
+import {exps} from './english-content.js?v=language-audit1';
+const angleLabels={
+ 'Angle θ, °':['Angolo θ, °','Ángulo θ, °'],
+ 'Analyser angle, °':['Angolo dell’analizzatore, °','Ángulo del analizador, °'],
+ 'filter angle, °':['angolo del filtro, °','ángulo del filtro, °']
+};
 export function installLanguage(language){
  const dictionary={...dictionaries[language]};
+ for(const [label,values] of Object.entries(angleLabels))dictionary[label]=values[language==='it'?0:1];
  for(const e of exps){const m=models[language][e.id];dictionary[e.note]=m.note;dictionary[e.observe]=m.task;dictionary[e.task]=m.task;dictionary[e.limit]=m.note;
  const equations=e.theory.flatMap(([,body])=>[...body.matchAll(/<div class="formula">[\s\S]*?<\/div>/g)].map(m=>m[0].replace(/(\d)\.(?=\d)/g,'$1,')));
  const references=e.theory.filter(([title])=>title==='Research references');

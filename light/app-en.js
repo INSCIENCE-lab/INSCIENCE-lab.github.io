@@ -3,10 +3,10 @@ import {englishStatus} from './solver-language.js';
 import {sunCameraRay} from './sky-camera.js';
 import {requestSky,cancelSky} from './sky-solver.js';
 import {selectedSky,dayPosition,normaliseMix,fixedAtmosphere} from './atmosphere.js';
-import {exps,groups,defaults,readEnglishRecords,canonicalRecords} from './english-content.js?v=uk-copy1';
+import {exps,groups,defaults,readEnglishRecords,canonicalRecords} from './english-content.js?v=language-audit1';
 
 import * as P from './physics-en.js?v=en1';
-import {art,drawScene,drawChart,chartData,fmt,drawSunCloseup,displayLocale} from './visuals-en.js?v=mobile3';
+import {art,drawScene,drawChart,chartData,fmt,drawSunCloseup,displayLocale} from './visuals-en.js?v=language-audit1';
 const $=s=>document.querySelector(s),main=$('#main');let active=null,params={},time=0,running=false,last=0,frame=0,photons=[],cdf=[],drawCache=null,records=[];try{records=JSON.parse(localStorage.getItem('inscience-light-records')||'[]');if(!Array.isArray(records))records=[]}catch{}records=readEnglishRecords(records);let storeOK=true;const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');const number=x=>fmt(x,3);let toastTimer;
 function toast(s){$('#toast').textContent=s;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3000)}
 function persist(){try{localStorage.setItem('inscience-light-records',JSON.stringify(canonicalRecords(records)))}catch{storeOK=false;toast('This browser could not save your records. Download the CSV now.')}$('#count').textContent=records.length}

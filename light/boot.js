@@ -17,8 +17,8 @@ if(language!=='uk'){
  for(const a of document.querySelectorAll('.inscience-network a[href]')){const url=new URL(a.href);url.searchParams.set('lang',language);a.href=url;}
 }
 document.querySelector('link[rel=canonical]').href='https://inscience-lab.github.io/light/?lang='+language;
-if(language==='it'||language==='es'){const {installLanguage}=await import('./romance.js?v=uk-copy1');installLanguage(language);}
-await import(language!=='uk'?'./app-en.js?v=uk-copy1':'./app.js?v=uk-copy1');
+if(language==='it'||language==='es'){const {installLanguage}=await import('./romance.js?v=language-audit1');installLanguage(language);}
+await import(language!=='uk'?'./app-en.js?v=language-audit1':'./app.js?v=uk-copy1');
 
 document.getElementById('lightLoading')?.remove();
 }
