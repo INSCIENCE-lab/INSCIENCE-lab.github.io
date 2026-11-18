@@ -2,8 +2,8 @@ import {setSkyPending,markSkyReady,installSceneTools,skyManualNote} from './mobi
 import {sunCameraRay} from './sky-camera.js';
 import {requestSky,cancelSky} from './sky-solver.js';
 import {selectedSky,dayPosition,normaliseMix,fixedAtmosphere} from './atmosphere.js';
-import {exps,groups,defaults} from './content.js?v=uk-copy1';
-import {enhance} from './enhancements.js?v=uk-copy1';
+import {exps,groups,defaults} from './content.js?v=editorial1';
+import {enhance} from './enhancements.js?v=editorial1';
 enhance(exps);
 import * as P from './physics.js';
 import {art,drawScene,drawChart,chartData,fmt,drawSunCloseup} from './visuals.js?v=uk-copy1';

@@ -1,5 +1,5 @@
-import {dictionaries,theories,models} from './romance-data.js?v=mobile3';
-import {exps} from './english-content.js?v=language-audit1';
+import {dictionaries,theories,models} from './romance-data.js?v=editorial1';
+import {exps} from './english-content.js?v=editorial1';
 const angleLabels={
  'Angle θ, °':['Angolo θ, °','Ángulo θ, °'],
  'Analyser angle, °':['Angolo dell’analizzatore, °','Ángulo del analizador, °'],

@@ -3,7 +3,7 @@ import {englishStatus} from './solver-language.js';
 import {sunCameraRay} from './sky-camera.js';
 import {requestSky,cancelSky} from './sky-solver.js';
 import {selectedSky,dayPosition,normaliseMix,fixedAtmosphere} from './atmosphere.js';
-import {exps,groups,defaults,readEnglishRecords,canonicalRecords} from './english-content.js?v=language-audit1';
+import {exps,groups,defaults,readEnglishRecords,canonicalRecords} from './english-content.js?v=editorial1';
 
 import * as P from './physics-en.js?v=en1';
 import {art,drawScene,drawChart,chartData,fmt,drawSunCloseup,displayLocale} from './visuals-en.js?v=language-audit1';
