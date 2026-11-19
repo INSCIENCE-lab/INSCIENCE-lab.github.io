@@ -142,6 +142,30 @@ const headings=[
  ['Закони й обмеження розрахунку','Laws and limits of the calculation','Leggi e limiti del calcolo','Leyes y límites del cálculo'],
  ['τ — оптична товщина, а σᵣ — переріз розсіювання молекули. У наближенні Релея він зростає для коротких хвиль. Модель підсумовує пряме світло, одноразове й багаторазове розсіювання та відбиття від поверхні. Вона не є моделлю ока або камери.','τ is optical depth and σᵣ is a molecular scattering cross-section. In the Rayleigh approximation it grows at short wavelengths. The model includes direct light, single and multiple scattering, and reflection from the surface. It does not model the eye or camera.','τ è lo spessore ottico e σᵣ la sezione d’urto molecolare. Nell’approssimazione di Rayleigh cresce a lunghezze d’onda corte. Il modello include luce diretta, diffusione singola e multipla e riflessione al suolo. Non modella occhi o camere.','τ es el espesor óptico y σᵣ la sección eficaz molecular. En la aproximación de Rayleigh aumenta a longitudes de onda cortas. El modelo incluye luz directa, dispersión simple y múltiple y reflexión del suelo. No modela el ojo o la cámara.'],
 ];
+const parameterHelp=[
+ 'Що означають ці параметри?',
+ 'What do these settings mean?',
+ 'Che cosa significano questi parametri?',
+ '¿Qué significan estos parámetros?',
+];
+
+function addParameterHelp(doc,languageIndex){
+ const heading=doc.querySelector('.settings > h3');
+ if(!heading||doc.querySelector('.skyParameterHelp'))return;
+ const link=doc.createElement('a');
+ link.className='skyParameterHelp';
+ link.href='#sky-parameters';
+ link.setAttribute('data-brand-managed','');
+ link.textContent=parameterHelp[languageIndex];
+ link.addEventListener('click',event=>{
+  event.preventDefault();
+  const target=doc.getElementById('sky-parameters-title');
+  target.focus({preventScroll:true});
+  target.scrollIntoView({behavior:'instant',block:'start'});
+ });
+ heading.after(link);
+}
+
 function refLinks(ids){
  return ids.map(id=>{const [name,url]=references[id];return `<a href="${url}" target="_blank" rel="noopener">${name}</a>`;});
 }
@@ -168,7 +192,8 @@ export function showSkyTheory(doc,planet,fields){
   `<section><h3>${title[i]}</h3><p>${body[i]}</p>${formula?`<div class="formula">${i===0?formula.replaceAll('550 nm','550 нм'):formula}</div>`:''}<p class="skyTheoryRefs">${refLinks(refs).join(' · ')}</p></section>`
  ).join('');
  const rows=glossary.map(([keys,body])=>[keys.filter(k=>active.includes(k)),keys[0]==='dustH'&&planet==='mars'?marsHeightGuide[i]:body[i]]).filter(([keys])=>keys.length);
- article.innerHTML=`<h2>${mode.title[i]}</h2>${chapters}<section><h3>${headings[6][i]}</h3><div class="formula">I<sub>dir</sub> = I₀ exp(−τ) &nbsp; · &nbsp; σ<sub>R</sub>(λ) ∝ λ<sup>−4</sup></div><p>${headings[7][i]}</p><p class="skyTheoryRefs">${refLinks(['optical','transport']).join(' · ')}</p></section><section><h3>${headings[0][i]}</h3><dl class="skyControlGuide">${rows.map(([keys,body])=>`<div><dt>${keys.map(terms).join(' · ')}</dt><dd>${body}</dd></div>`).join('')}</dl></section><section class="sources"><h3>${headings[1][i]}</h3><ul>${refLinks(mode.links).map(link=>'<li>'+link+'</li>').join('')}</ul></section>`;
+ article.innerHTML=`<h2>${mode.title[i]}</h2>${chapters}<section><h3>${headings[6][i]}</h3><div class="formula">I<sub>dir</sub> = I₀ exp(−τ) &nbsp; · &nbsp; σ<sub>R</sub>(λ) ∝ λ<sup>−4</sup></div><p>${headings[7][i]}</p><p class="skyTheoryRefs">${refLinks(['optical','transport']).join(' · ')}</p></section><section id="sky-parameters" aria-labelledby="sky-parameters-title"><h3 id="sky-parameters-title" tabindex="-1">${headings[0][i]}</h3><dl class="skyControlGuide">${rows.map(([keys,body])=>`<div><dt><strong>${keys.map(terms).join(' · ')}</strong></dt><dd>${body}</dd></div>`).join('')}</dl></section><section class="sources"><h3>${headings[1][i]}</h3><ul>${refLinks(mode.links).map(link=>'<li>'+link+'</li>').join('')}</ul></section>`;
+ addParameterHelp(doc,i);
  writeText(doc,'.settings .note p',mode.note[i]);
  writeText(doc,'.theoryaside .task p',mode.task[i]);
  writeText(doc,'.theoryaside .callout p',mode.limit[i]);

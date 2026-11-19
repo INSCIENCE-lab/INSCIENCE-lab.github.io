@@ -1,4 +1,4 @@
-import {skyCanvasCaption} from './sky-content.js?v=sky-modes2';
+import {skyCanvasCaption} from './sky-content.js?v=sky-guide1';
 import {sunCameraRay,sampleSkyRGB,skyDisplay} from './sky-camera.js';
 import {atmosphere,selectedSky,exposureRGB,dayPosition,gasSigma,skyLinearRGB,displaySkyRGB,getTransfer} from './atmosphere.js';
 import * as P from './physics.js';

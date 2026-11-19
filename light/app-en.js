@@ -1,5 +1,5 @@
 import {skyFieldVisible,rememberSky,useSkyPlanet} from './sky-modes.js?v=sky-modes1';
-import {showSkyTheory,skyDepthLabel} from './sky-content.js?v=sky-modes2';
+import {showSkyTheory,skyDepthLabel} from './sky-content.js?v=sky-guide1';
 import {setSkyPending,markSkyReady,installSceneTools,skyManualNote} from './mobile-ui.js';
 import {englishStatus} from './solver-language.js';
 import {sunCameraRay} from './sky-camera.js';
@@ -8,7 +8,7 @@ import {selectedSky,dayPosition,normaliseMix} from './atmosphere.js';
 import {exps,groups,defaults,readEnglishRecords,canonicalRecords} from './english-content.js?v=editorial1';
 
 import * as P from './physics-en.js?v=en1';
-import {art,drawScene,drawChart,chartData,fmt,drawSunCloseup,displayLocale} from './visuals-en.js?v=sky-modes2';
+import {art,drawScene,drawChart,chartData,fmt,drawSunCloseup,displayLocale} from './visuals-en.js?v=sky-guide1';
 const $=s=>document.querySelector(s),main=$('#main');let active=null,params={},time=0,running=false,last=0,frame=0,photons=[],cdf=[],drawCache=null,records=[];try{records=JSON.parse(localStorage.getItem('inscience-light-records')||'[]');if(!Array.isArray(records))records=[]}catch{}records=readEnglishRecords(records);let storeOK=true;const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');const number=x=>fmt(x,3);let toastTimer;
 function toast(s){$('#toast').textContent=s;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3000)}
 function persist(){try{localStorage.setItem('inscience-light-records',JSON.stringify(canonicalRecords(records)))}catch{storeOK=false;toast('This browser could not save your records. Download the CSV now.')}$('#count').textContent=records.length}

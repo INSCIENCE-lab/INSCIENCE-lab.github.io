@@ -1,5 +1,5 @@
 import {skyFieldVisible,rememberSky,useSkyPlanet} from './sky-modes.js?v=sky-modes1';
-import {showSkyTheory,skyDepthLabel} from './sky-content.js?v=sky-modes2';
+import {showSkyTheory,skyDepthLabel} from './sky-content.js?v=sky-guide1';
 import {setSkyPending,markSkyReady,installSceneTools,skyManualNote} from './mobile-ui.js';
 import {sunCameraRay} from './sky-camera.js';
 import {requestSky,cancelSky} from './sky-solver.js';
@@ -8,7 +8,7 @@ import {exps,groups,defaults} from './content.js?v=editorial1';
 import {enhance} from './enhancements.js?v=editorial1';
 enhance(exps);
 import * as P from './physics.js';
-import {art,drawScene,drawChart,chartData,fmt,drawSunCloseup} from './visuals.js?v=sky-modes2';
+import {art,drawScene,drawChart,chartData,fmt,drawSunCloseup} from './visuals.js?v=sky-guide1';
 const $=s=>document.querySelector(s),main=$('#main');let active=null,params={},time=0,running=false,last=0,frame=0,photons=[],cdf=[],drawCache=null,records=[];try{records=JSON.parse(localStorage.getItem('inscience-light-records')||'[]');if(!Array.isArray(records))records=[]}catch{}let storeOK=true;const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');const number=x=>fmt(x,3);let toastTimer;
 function toast(s){$('#toast').textContent=s;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3000)}
 function persist(){try{localStorage.setItem('inscience-light-records',JSON.stringify(records))}catch{storeOK=false;toast('Браузер не дозволив збереження. Завантаж CSV зараз.')}$('#count').textContent=records.length}

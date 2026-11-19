@@ -83,7 +83,9 @@ input[type=range]{min-height:36px;touch-action:pan-y}
 .skyLayout .theoryarticle[data-sky-theory] p{font-size:1rem;line-height:1.65}
 .skyControlGuide{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:.75rem;margin:.8rem 0 0}
 .skyControlGuide>div{padding:.85rem;border:1px solid var(--line);border-radius:12px;background:#fff9f6}
-.skyControlGuide dt{font-weight:700}
+.skyControlGuide dt strong{font-family:system-ui,sans-serif;font-weight:750}
+.skyLayout .settings .skyParameterHelp{display:inline-block;color:#92341c;font-weight:700;line-height:1.35;text-decoration:underline;text-underline-offset:.2em}
+.skyParameterHelp:hover{color:var(--ink)}
 .skyControlGuide dd{margin:.4rem 0 0;line-height:1.55}
 .skyLayout .theoryarticle .skyTheoryRefs{font-size:.86rem}
 .skyTheoryRefs a{overflow-wrap:anywhere}

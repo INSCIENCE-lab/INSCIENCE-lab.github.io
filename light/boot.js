@@ -18,7 +18,7 @@ if(language!=='uk'){
 }
 document.querySelector('link[rel=canonical]').href='https://inscience-lab.github.io/light/?lang='+language;
 if(language==='it'||language==='es'){const {installLanguage}=await import('./romance.js?v=editorial1');installLanguage(language);}
-await import(language!=='uk'?'./app-en.js?v=sky-modes2':'./app.js?v=sky-modes2');
+await import(language!=='uk'?'./app-en.js?v=sky-guide1':'./app.js?v=sky-guide1');
 
 document.getElementById('lightLoading')?.remove();
 }
