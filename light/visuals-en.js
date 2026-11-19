@@ -1,3 +1,4 @@
+import {skyCanvasCaption} from './sky-content.js?v=sky-modes2';
 import {sunCameraRay,sampleSkyRGB,skyDisplay} from './sky-camera.js';
 import {atmosphere,selectedSky,exposureRGB,dayPosition,gasSigma,skyLinearRGB,displaySkyRGB,getTransfer} from './atmosphere.js';
 import * as P from './physics-en.js?v=en1';
@@ -264,7 +265,7 @@ function drawAtmosphere(c,w,h,p){
  c.fillStyle='#382C24';c.fillRect(0,horizon,w,h-horizon);line(c,[[0,horizon],[w,horizon]],'#D8C0A6',1);
  c.setLineDash([3,5]);line(c,Array.from({length:91},(_,i)=>{const q=dayPosition(i*2,p.latitude);return [X(q.sunAz),Y(q.sun)]}),'#ffffff66',1);c.setLineDash([]);
  const q=selectedSky(p);c.save();c.beginPath();c.rect(0,top,w,horizon-top);c.clip();dot(c,X(p.sunAz||0),Y(p.sun),Math.max(2,w*.266/viewWidth),'rgb('+display(skyLinearRGB(q.direct).map(x=>x/6.8e-5)).join(',')+')');c.restore();let x=X(p.azimuth+(p.sunAz||0)),y=Y(p.view);if(x>=0&&x<=w){c.strokeStyle='white';c.lineWidth=1.5;c.beginPath();c.arc(x,y,6,0,Math.PI*2);c.stroke()}
- text(c,'200° panorama · camera on the surface',12,30,'#fff',w<450?9:11);for(const [a,label]of[[-90,'East'],[0,'South'],[90,'West']])if(X(a)>0&&X(a)<w)text(c,label,Math.max(10,X(a)-15),horizon+17,'#fff',10);text(c,'Dashed: daytime arc · circle: spectrum direction',12,h-10,'#fff',w<450?8:10);
+ text(c,skyCanvasCaption(p,'panorama'),12,30,'#fff',w<450?9:11);for(const [a,label]of[[-90,'East'],[0,'South'],[90,'West']])if(X(a)>0&&X(a)<w)text(c,label,Math.max(10,X(a)-15),horizon+17,'#fff',10);text(c,'Dashed: daytime arc · circle: spectrum direction',12,h-10,'#fff',w<450?8:10);
 }
 
 export function drawSunCloseup(canvas,p){
@@ -275,6 +276,6 @@ export function drawSunCloseup(canvas,p){
  const solar=display(skyLinearRGB(q.direct).map(x=>x/6.8e-5)),radius=Math.max(1.2,w/2*Math.tan(.266*Math.PI/180)/Math.tan(fov*Math.PI/360));
  // At the geometric horizon only the upper half of the solar disk is visible.
  c.save();c.beginPath();c.rect(0,0,w,p.sun===0?h/2:h);c.clip();dot(c,w/2,h/2,radius,'rgb('+solar.join(',')+')');c.restore();
- c.fillStyle='#181513bb';c.fillRect(8,8,Math.min(w-16,255),26);c.fillStyle='white';c.font='11px NAMU, sans-serif';c.fillText('Looking at the Sun · field '+fov+'°',15,26);
+ c.fillStyle='#181513bb';c.fillRect(8,8,Math.min(w-16,255),26);c.fillStyle='white';c.font='11px NAMU, sans-serif';c.fillText(skyCanvasCaption(p,'closeup'),15,26);
  canvas.dataset.solarCenter='0.5,0.5';canvas.dataset.exposure='shared-with-panorama';
 }

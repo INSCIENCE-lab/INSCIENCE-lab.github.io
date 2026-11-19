@@ -177,3 +177,27 @@ export function showSkyTheory(doc,planet,fields){
  writeText(doc,'#preset',headings[2][i]);
  writeText(doc,'.skyViewportGrid figure:nth-child(2) figcaption',headings[planet==='custom'?5:4][i]);
 }
+
+export function skyDepthLabel(planet){
+ const i=Math.max(0,languages.indexOf(document.documentElement.lang));
+ return (modeTerms[planet]?.dust??labels.dust)[i];
+}
+
+export function skyCanvasCaption(p,view){
+ const i=Math.max(0,languages.indexOf(document.documentElement.lang));
+ if(view==='panorama'){
+  return [
+   'Панорама 200° · висота '+p.alt+' км',
+   '200° panorama · altitude '+p.alt+' km',
+   'Panorama di 200° · quota '+p.alt+' km',
+   'Panorámica de 200° · altitud '+p.alt+' km',
+  ][i];
+ }
+ const star=p.planet==='custom',fov=Number(p.sunFov||20)+'°';
+ return [
+  (star?'У напрямку зорі':'У напрямку Сонця')+' · поле '+fov,
+  (star?'Towards the star':'Towards the Sun')+' · field '+fov,
+  (star?'Verso la stella':'Verso il Sole')+' · campo '+fov,
+  (star?'Hacia la estrella':'Hacia el Sol')+' · campo '+fov,
+ ][i];
+}
