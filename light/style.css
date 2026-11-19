@@ -79,3 +79,11 @@ input[type=range]{min-height:36px;touch-action:pan-y}
  .labgrid .calculated{order:3;width:100%}
  .labgrid .under{order:4;width:100%}
 }
+
+.skyLayout .theoryarticle[data-sky-theory] p{font-size:1rem;line-height:1.65}
+.skyControlGuide{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:.75rem;margin:.8rem 0 0}
+.skyControlGuide>div{padding:.85rem;border:1px solid var(--line);border-radius:12px;background:#fff9f6}
+.skyControlGuide dt{font-weight:700}
+.skyControlGuide dd{margin:.4rem 0 0;line-height:1.55}
+.skyLayout .theoryarticle .skyTheoryRefs{font-size:.86rem}
+.skyTheoryRefs a{overflow-wrap:anywhere}
